@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungha Cho</title>
+    <style>
+html{
+    scroll-behavior: smooth;
+}
+main{
+    width: 100%;
+}
+nav{
+    width: 80%;
+    border: blue 1px solid;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    height: fit-content;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    transition: height 0.3s ease-in-out;
+}
+nav li:hover{
+    background-color: azure;
+    color: black;
+}
+nav li:active{
+    background-color: beige;
+    color: skyblue;
+}
+/*writing a css code to make the nav > ul > li to use space within nav equally*/
+nav > ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+}
+nav > ul > li{
+    display: inline-block;
+    border-right: gray 1px solid;
+    text-decoration: none;
+    padding: 10px 5px;
+    width: 12.66%;
+    color: plum;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+nav > ul > li:last-child{
+    border-right: none;
+}
+/*header css finished*/
+
+/*main body css */
+section{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    border-bottom: 1px solid black;
+    overflow: auto;
+}
+.container{
+    width: 100%;
+    height: auto;
+}
+
+/*hero*/
+#hero h3{
+    text-align: center;
+}
+#clock{
+    width: 100%;
+    font-size: 50px;
+}
+#hero p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*about*/
+
+.self_description{
+    background: cornflowerblue;
+    width: 80%;
+    height: 40%;
+    border-radius: 25% 10%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.self_description p{
+    text-align: center;
+    width: 90%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+
+}
+.profile_photo{
+    background: black;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+    top: 10%;
+    z-index: 2;
+    border: 1px solid black;
+}
+
+/*experience*/
+#company1{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 3fr;
+    width: 100%;
+    height: fit-content;
+    background-color: cornflowerblue;
+}
+#company1_title{
+    background-color: yellow;
+}
+#company1_logo{
+    background: url(Images/openai.jpg) no-repeat;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.social-media-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.linkedin, .instagram, .notion{
+    background: black;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    align-items: center;
+    float: left;
+}
+#footer{
+    width: 80%;
+}
+    </style>
+    <script>
+        function scrollToSection(section){
+            document.querySelector(section).scrollIntoView({behavior: 'smooth'});
+        }
+    </script>
+</head>
+<body>
+        <nav>
+            <ul>
+                <li onclick="scrollToSection('#hero')">Hero</li>
+                <li onclick="scrollToSection('#about')">About</li>
+                <li onclick="scrollToSection('#experience')">Experience</li>
+                <li onclick="scrollToSection('#projects')">Projects</li>
+                <li onclick="scrollToSection('#social_media')">Social Media</li>
+                <li onclick="scrollToSection('#contacts')">Contacts</li>
+            </ul>
+        </nav>
+    <main class="container">
+        <section id="hero">
+            <h3>Hero</h3>
+            <div class="bible_verse">
+                <h3>Dear friends, let us love one another, for love comes from God. 
+                <br/>Everyone who loves has been born of God and knows God. 
+                <br/>Whoever does not love does not know God, because God is love. 
+                </h3>
+            </div>
+            <p id="message">The Time of the Lord is near</p>
+            <hr/>
+            <span id="clock" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;"></span>
+            <script>
+                var clock = document.getElementById('clock');
+                function time(){
+                    var date = new Date();
+                    var hours = date.getHours();
+                    var minutes = date.getMinutes();
+                    var seconds = date.getSeconds();
+                    var session = "AM";
+                    if(hours == 0){
+                        hours = 12;
+                    }
+                    if(hours > 12){
+                        hours = hours - 12;
+                        session = "PM";
+                    }
+                    hours = (hours < 10) ? "0" + hours : hours;
+                    minutes = (minutes < 10) ? "0" + minutes : minutes;
+                    seconds = (seconds < 10) ? "0" + seconds : seconds;
+                    var time = hours + ":" + minutes + ":" + seconds + " " + session;
+                    clock.innerHTML = time;
+                }
+                setInterval(time, 1000);
+            </script>
+        </section>
+        <section id="about">
+            <h3>About</h3>
+            <div class="profile_photo" style="background: url('Images/openai.jpg') 50% 50% /98% 98% no-repeat;  "></div>
+            <div class="self_description"><p>Hi! I am Jungha Cho.<br/> I am a mechanical engineer with developer knowledge.</p> </div>
+        </section>
+        <section id="experience">
+            <h3>Experience</h3>
+            <div id="company1">
+                <div id="company1_logo">
+                    
+                </div>
+                <div id="company1_title">
+                    <h2>Gen.G</h2>
+                </div>
+                <div id="company1_empty">
+
+                </div>
+                <div id="company1_text">
+
+                </div>
+            </div>
+            <div class="company2" id="company2_text"></div>
+        </section>
+        <section id="projects">
+            <h3>Projects</h3>
+            <div id="project#1"></div>
+            <div id="project#2"></div>
+            <div id="project#3"></div>
+            <div id="project#4"></div>
+            <div id="project#5"></div>
+            <div id="project#6"></div>
+        </section>
+        <!-- <section class="Blogposts">
+            <h3>Blogposts</h3>
+            <div></div>
+        </section>-->
+        <section id="social_media">
+            <h3>Social Media</h3>
+            <div class="social-media-wrapper">
+                <div class="linkedin"></div>
+                <div class="instagram"></div>
+                <div class="notion"></div>
+            </div>
+        </section>
+        <style>
+            .contact-box-wrapper > fieldset > span{
+                margin: 20px 0px 0 0;
+                
+            }
+        </style>
+        <section id="contacts">
+            <h3>Contacts</h3>
+            <div class="contact-box-wrapper">
+                <fieldset>
+                    <legend>alert()/confirm()/prompt()</legend> <!--prompt는 잘 안씀-->
+                    이름 <input type="text" id="name" />
+                    이메일 <input type="email" id="email" /><br>
+                    <span>메시지</span><br>
+                    <textarea rows="10" cols="90"></textarea>
+                    <input type="button" value="접수" onclick="fn.send();"/>
+                </fieldset>
+            </div>
+        </section>
+        <footer>
+            <div id="footer"><p>@</p></div>
+        </footer>
+    </main>
+</body>
+</html>
