@@ -8,13 +8,16 @@
     <style>
 html{
     scroll-behavior: smooth;
+    background-color: aliceblue;
 }
 main{
     width: 100%;
+    height: auto;
 }
 nav{
     width: 80%;
     border: blue 1px solid;
+    border-radius: 10px;
     box-sizing: border-box;
     background-color: aliceblue;
     height: fit-content;
@@ -24,11 +27,13 @@ nav{
     left: 0;
     right: 0;
     z-index: 3;
-    transition: height 0.3s ease-in-out;
 }
 nav li:hover{
     background-color: azure;
-    color: black;
+    color: blue;
+    font-weight: bold;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 nav li:active{
     background-color: beige;
@@ -40,15 +45,19 @@ nav > ul{
     margin: 0;
     width: 100%;
     align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
 }
 nav > ul > li{
     display: inline-block;
     border-right: gray 1px solid;
     text-decoration: none;
     padding: 10px 5px;
-    width: 12.66%;
     color: plum;
     text-align: center;
+    width: 100%;
     height: 40px;
     line-height: 40px;
 }
@@ -61,15 +70,11 @@ nav > ul > li:last-child{
 section{
     width: 80%;
     margin: auto;
-    height: 100vh;
+    height: auto;
     border-bottom: 1px solid black;
     overflow: auto;
+    background-color: white;
 }
-.container{
-    width: 100%;
-    height: auto;
-}
-
 /*hero*/
 #hero h3{
     text-align: center;
@@ -94,6 +99,7 @@ section{
     border-radius: 25% 10%;
     box-sizing: border-box;
     margin: auto;
+    margin-top: 30%;
     position: relative;
     z-index: 1;
     display: flex;
@@ -112,43 +118,98 @@ section{
     width: 200px;
     height: 200px;
     margin: auto;
-    position: relative;
-    top: 10%;
+    position: absolute;
+    top: -20%;
+    left: 33%;
     z-index: 2;
     border: 1px solid black;
 }
 
 /*experience*/
+.company1{
+    border: 1px solid black;
+}
 #company1{
     display:grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 3fr;
     width: 100%;
     height: fit-content;
-    background-color: cornflowerblue;
+
 }
 #company1_title{
-    background-color: yellow;
+ 
 }
 #company1_logo{
     background: url(Images/openai.jpg) no-repeat;
     border-radius: 50%;
     align-items: center;
 }
+/*projects*/
 
-.social-media-wrapper{
+#projects_wrapper_line_1{
+    border: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 100%-40px;
+    height: auto;
+    padding: 20px;
+    justify-content: space-evenly;
 }
-.linkedin, .instagram, .notion{
+.projects_line_1{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}
+#projects_wrapper_line_2{
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%-40px;
+    height: auto;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.projects_line_2{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+}
+#project4, #project5,#project6 {
+    
+}
+/*social media*/
+.social-media-wrapper{
+    height: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#linkedin, #instagram, #notion{
     background: black;
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin: auto;
-    align-items: center;
-    float: left;
 }
+#linkedin{
+    background: url('Images/linkedin.png') 50% 50% /100% 100%;
+}
+#instagram{
+    background: url('Images/instagram.png') 50% 50% /100% 100%;
+}
+#notion{
+    background: url('Images/notion.png') 50% 50% /100% 100%;
+}
+/*contacts*/
+
+
+
+/*footer*/
 #footer{
     width: 80%;
 }
@@ -208,22 +269,25 @@ section{
         </section>
         <section id="about">
             <h3>About</h3>
-            <div class="profile_photo" style="background: url('Images/openai.jpg') 50% 50% /98% 98% no-repeat;  "></div>
-            <div class="self_description"><p>Hi! I am Jungha Cho.<br/> I am a mechanical engineer with developer knowledge.</p> </div>
+            
+            <div class="self_description">
+                <div class="profile_photo" style="background: url('Images/openai.jpg') 50% 50% /100% 100% no-repeat;  "></div>
+                <p>Hi! I am Jungha Cho.<br/> I am a mechanical engineer with developer knowledge.</p> 
+            </div>
         </section>
         <section id="experience">
             <h3>Experience</h3>
-            <div id="company1">
-                <div id="company1_logo">
+            <div class="company1" id="company1">
+                <div class="company1" id="company1_logo">
                     
                 </div>
-                <div id="company1_title">
+                <div class="company1" id="company1_title">
                     <h2>Gen.G</h2>
                 </div>
-                <div id="company1_empty">
+                <div class="company1" id="company1_empty">
 
                 </div>
-                <div id="company1_text">
+                <div class="company1" id="company1_text">
 
                 </div>
             </div>
@@ -231,23 +295,23 @@ section{
         </section>
         <section id="projects">
             <h3>Projects</h3>
-            <div id="project#1"></div>
-            <div id="project#2"></div>
-            <div id="project#3"></div>
-            <div id="project#4"></div>
-            <div id="project#5"></div>
-            <div id="project#6"></div>
+            <div id="projects_wrapper_line_1">
+                <div class="projects_line_1" id="project1"><h4>project1</h4></div>
+                <div class="projects_line_1" id="project2"><h4>project2</h4></div>
+                <div class="projects_line_1" id="project3"><h4>project3</h4></div>
+            </div>
+            <div id="projects_wrapper_line_2">
+                <div class="projects_line_2" id="project4"><h4>project4</h4></div>
+                <div class="projects_line_2" id="project5"><h4>project5</h4></div>
+                <div class="projects_line_2" id="project6"><h4>project6</h4></div>
+            </div>
         </section>
-        <!-- <section class="Blogposts">
-            <h3>Blogposts</h3>
-            <div></div>
-        </section>-->
         <section id="social_media">
             <h3>Social Media</h3>
             <div class="social-media-wrapper">
-                <div class="linkedin"></div>
-                <div class="instagram"></div>
-                <div class="notion"></div>
+                <a href="https://kr.linkedin.com/in/jungha-j-cho-895211126"><div id="linkedin"></div></a>
+                <a href="https://www.instagram.com/chojungha98/"><div id="instagram"></div></a>
+                <a href="https://www.notion.so/Jungha-s-Home-ea8f7f7e75cd49ffa21bca0988bc71f8"><div id="notion"></div></a>
             </div>
         </section>
         <style>
@@ -264,13 +328,13 @@ section{
                     이름 <input type="text" id="name" />
                     이메일 <input type="email" id="email" /><br>
                     <span>메시지</span><br>
-                    <textarea rows="10" cols="90"></textarea>
+                    <textarea rows="10" cols="80"></textarea>
                     <input type="button" value="접수" onclick="fn.send();"/>
                 </fieldset>
             </div>
         </section>
         <footer>
-            <div id="footer"><p>@</p></div>
+            <div id="footer" style="text-align: center;"><p style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: large;">2023&#169;chojungha </p></div>
         </footer>
     </main>
 </body>
