@@ -52,6 +52,7 @@ nav > ul{
 }
 nav > ul > li{
     display: inline-block;
+    flex: 1 1 auto;
     border-right: gray 1px solid;
     text-decoration: none;
     padding: 10px 5px;
@@ -59,7 +60,9 @@ nav > ul > li{
     text-align: center;
     width: 100%;
     height: 40px;
-    line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 nav > ul > li:last-child{
     border-right: none;
@@ -75,13 +78,18 @@ section{
     overflow: auto;
     background-color: white;
 }
-/*hero*/
-#hero h3{
+section h3{
     text-align: center;
+}
+/*hero*/
+#hero{
+    display: flex;
+    flex-flow: column wrap;
 }
 #clock{
     width: 100%;
     font-size: 50px;
+    text-align: center;
 }
 #hero p{
     text-align: center;
@@ -93,24 +101,27 @@ section{
 /*about*/
 
 .self_description{
-    background: cornflowerblue;
     width: 80%;
-    height: 40%;
-    border-radius: 25% 10%;
+    height: 100vh;
+    border: 1px solid black;
     box-sizing: border-box;
     margin: auto;
-    margin-top: 30%;
-    position: relative;
+    margin-top: 10%;
     z-index: 1;
-    display: flex;
-    align-items: center;
+    display: grid;
+    margin-bottom: 30%;
+    grid-template-rows: repeat(1fr, 3);
+}
+.self_description > p {
+    border: 1px solid black;
 }
 .self_description p{
     text-align: center;
-    width: 90%;
+    width: 100%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
-
+    height: auto;
+    line-height: auto;
 }
 .profile_photo{
     background: black;
@@ -118,33 +129,40 @@ section{
     width: 200px;
     height: 200px;
     margin: auto;
-    position: absolute;
-    top: -20%;
-    left: 33%;
     z-index: 2;
     border: 1px solid black;
 }
 
 /*experience*/
-.company1{
+#experience{
+    height: 100vh;
+}
+.company{
     border: 1px solid black;
 }
-#company1{
-    display:grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+#company{
+    display:flex;
+    width: 100%-2px;
+    height: 30vh;
+    text-align: center;
+}
+#company_logo{
+    width: 100px;
+    height: 100px;
+}
+#company_content{
     width: 100%;
-    height: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+}
+#company_title{
+    height: 80px;
+}
+#company_text{
+    height: 100%;
+    
+}
 
-}
-#company1_title{
- 
-}
-#company1_logo{
-    background: url(Images/openai.jpg) no-repeat;
-    border-radius: 50%;
-    align-items: center;
-}
 /*projects*/
 
 #projects_wrapper_line_1{
@@ -159,35 +177,26 @@ section{
 .projects_line_1{
     border: 1px solid black;
     border-radius: 10px;
-    width: 300px;
     height: 200px;
     margin: 10px;
+    flex: 0 0 300px;
 }
-#projects_wrapper_line_2{
-    border: 1px solid black;
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%-40px;
-    height: auto;
-    padding: 20px;
-    justify-content: space-evenly;
-}
-.projects_line_2{
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-}
+
 #project4, #project5,#project6 {
     
 }
 /*social media*/
 .social-media-wrapper{
-    height: 50vh;
+    height: auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-flow: row wrap;
+}
+.social-media-wrapper div{
+    flex-basis: 300px;
+    border: black 1px solid;
+
 }
 #linkedin, #instagram, #notion{
     background: black;
@@ -195,12 +204,18 @@ section{
     width: 130px;
     height: 130px;
     margin: auto;
+    padding: 10px;
 }
 #linkedin{
     background: url('Images/linkedin.png') 50% 50% /100% 100%;
 }
 #instagram{
     background: url('Images/instagram.png') 50% 50% /100% 100%;
+}
+#instagram_text, #linkedin_text, #notion_text{
+    border: 1px solid black;
+    width:100%;
+    text-align: center;
 }
 #notion{
     background: url('Images/notion.png') 50% 50% /100% 100%;
@@ -223,8 +238,8 @@ section{
 <body>
         <nav>
             <ul>
-                <li onclick="scrollToSection('#hero')">Hero</li>
-                <li onclick="scrollToSection('#about')">About</li>
+                <li onclick="scrollToSection('#hero')"><p>Hero</p></li>
+                <li onclick="scrollToSection('#about')"><p>About</p></li>
                 <li onclick="scrollToSection('#experience')">Experience</li>
                 <li onclick="scrollToSection('#projects')">Projects</li>
                 <li onclick="scrollToSection('#social_media')">Social Media</li>
@@ -242,7 +257,7 @@ section{
             </div>
             <p id="message">The Time of the Lord is near</p>
             <hr/>
-            <span id="clock" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;"></span>
+            <div id="clock" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;"></div>
             <script>
                 var clock = document.getElementById('clock');
                 function time(){
@@ -271,27 +286,10 @@ section{
             <h3>About</h3>
             
             <div class="self_description">
+                <p>Welcome My Friend!</p>
                 <div class="profile_photo" style="background: url('Images/openai.jpg') 50% 50% /100% 100% no-repeat;  "></div>
                 <p>Hi! I am Jungha Cho.<br/> I am a mechanical engineer with developer knowledge.</p> 
             </div>
-        </section>
-        <section id="experience">
-            <h3>Experience</h3>
-            <div class="company1" id="company1">
-                <div class="company1" id="company1_logo">
-                    
-                </div>
-                <div class="company1" id="company1_title">
-                    <h2>Gen.G</h2>
-                </div>
-                <div class="company1" id="company1_empty">
-
-                </div>
-                <div class="company1" id="company1_text">
-
-                </div>
-            </div>
-            <div class="company2" id="company2_text"></div>
         </section>
         <section id="projects">
             <h3>Projects</h3>
@@ -299,19 +297,68 @@ section{
                 <div class="projects_line_1" id="project1"><h4>project1</h4></div>
                 <div class="projects_line_1" id="project2"><h4>project2</h4></div>
                 <div class="projects_line_1" id="project3"><h4>project3</h4></div>
+                <div class="projects_line_1" id="project4"><h4>project4</h4></div>
+                <div class="projects_line_1" id="project5"><h4>project5</h4></div>
+                <div class="projects_line_1" id="project6"><h4>project6</h4></div>
             </div>
-            <div id="projects_wrapper_line_2">
-                <div class="projects_line_2" id="project4"><h4>project4</h4></div>
-                <div class="projects_line_2" id="project5"><h4>project5</h4></div>
-                <div class="projects_line_2" id="project6"><h4>project6</h4></div>
+        </section>
+        <section id="experience">
+            <h3>Experience</h3>
+            <div class="company" id="company">
+                <div class="company" id="company_logo">
+                    <h2>logo here</h2>
+                </div>
+                <div class="company" id="company_content">
+                    <div class="company" id="company_title">
+                        <h2>this is company1 title</h2>
+                    </div>
+                    <div class="company" id="company_text">
+                        <h2>this is company1 text</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="company" id="company">
+                <div class="company" id="company_logo">
+                    <h2>logo here</h2>
+                </div>
+                <div class="company" id="company_content">
+                    <div class="company" id="company_title">
+                        <h2>this is company2 title</h2>
+                    </div>
+                    <div class="company" id="company_text">
+                        <h2>this is company2 text</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="company" id="company">
+                <div class="company" id="company_logo">
+                    <h2>logo here</h2>
+                </div>
+                <div class="company" id="company_content">
+                    <div class="company" id="company_title">
+                        <h2>this is company3 title</h2>
+                    </div>
+                    <div class="company" id="company_text">
+                        <h2>this is company3 text</h2>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="social_media">
             <h3>Social Media</h3>
             <div class="social-media-wrapper">
-                <a href="https://kr.linkedin.com/in/jungha-j-cho-895211126"><div id="linkedin"></div></a>
-                <a href="https://www.instagram.com/chojungha98/"><div id="instagram"></div></a>
-                <a href="https://www.notion.so/Jungha-s-Home-ea8f7f7e75cd49ffa21bca0988bc71f8"><div id="notion"></div></a>
+                <div id="linkedin_wrapper">
+                    <a href="https://kr.linkedin.com/in/jungha-j-cho-895211126"><div id="linkedin"></div></a>
+                    <p id="linkedin_text">Visit my LinkedIn! I am currently unavailable for work</p>
+                </div>
+                <div id="instagram_wrapper">
+                    <a href="https://www.instagram.com/chojungha98/"><div id="instagram"></div></a>
+                    <p id="instagram_text">Visit my LinkedIn! I am currently unavailable for work</p>
+                </div>
+                <div id="notion_wrapper">
+                    <a href="https://www.notion.so/Jungha-s-Home-ea8f7f7e75cd49ffa21bca0988bc71f8"><div id="notion"></div></a>
+                    <p id="notion_text">Visit my LinkedIn! I am currently unavailable for work</p>
+                </div>
             </div>
         </section>
         <style>
@@ -325,10 +372,10 @@ section{
             <div class="contact-box-wrapper">
                 <fieldset>
                     <legend>alert()/confirm()/prompt()</legend> <!--prompt는 잘 안씀-->
-                    이름 <input type="text" id="name" />
+                    이름 &nbsp;&nbsp;&nbsp;<input type="text" id="name" /><br>
                     이메일 <input type="email" id="email" /><br>
                     <span>메시지</span><br>
-                    <textarea rows="10" cols="80"></textarea>
+                    <textarea style="height: 20vh; width: 80%;"></textarea>
                     <input type="button" value="접수" onclick="fn.send();"/>
                 </fieldset>
             </div>
