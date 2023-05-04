@@ -10,41 +10,7 @@
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popper.min.js"></script>
-
-    <script>
-        function scrollToSection(section){
-            document.querySelector(section).scrollIntoView({behavior: 'smooth'});
-        }
-        window.addEventListener('DOMContentLoaded', ()=>{
-            var name = document.getElementById('name');
-            var email = document.getElementById('email');
-            var message = document.getElementById('message');
-
-            var contactSection = document.querySelector('#contacts');
-            contactSection.onmousedown = ()=>{
-                name.focus();
-            }
-            name.onfocus = ()=>{
-                name.value = "";
-            }
-            name.onblur= ()=>{
-                if(name.value === ""){
-                    name.value = "What is your name?";
-                }
-                email.focus();
-            }
-            email.onfocus = ()=>{
-                email.value = "";
-            }
-            email.onblur= ()=>{
-                if(email.value === ""){
-                    email.value = "Your Email Address?";
-                }
-                message.focus();
-            }
-
-        })
-    </script>
+    <script src="js/script.js"  defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md" style="position: fixed;">
@@ -77,62 +43,34 @@
                 <br/>1 John 4:7-8
             </h3>
             </div>-->
-            <p id="message">I try, just to try again.</p>
+            <p id="message" style="color:white"></p>
             <hr/>
             <div id="clock" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;"></div>
-            <script>
-                var clock = document.getElementById('clock');
-                function time(){
-                    var date = new Date();
-                    var hours = date.getHours();
-                    var minutes = date.getMinutes();
-                    var seconds = date.getSeconds();
-                    var session = "AM";
-                    if(hours == 0){
-                        hours = 12;
-                    }
-                    if(hours > 12){
-                        hours = hours - 12;
-                        session = "PM";
-                    }
-                    hours = (hours < 10) ? "0" + hours : hours;
-                    minutes = (minutes < 10) ? "0" + minutes : minutes;
-                    seconds = (seconds < 10) ? "0" + seconds : seconds;
-                    var time = hours + ":" + minutes + ":" + seconds + " " + session;
-                    clock.innerHTML = time;
-                }
-                setInterval(time, 1000);
-            </script>
-            <div id="timeSpentMaking" style="font-size: 20px; color: black;"></div>
-            <script>
-                var timeSpentMaking = document.getElementById('timeSpentMaking');
-                function time2(){
-                    var now = new Date();
-                    var then = new Date(2023, 4, 20);
-                    var difference = then.getTime() - now.getTime();
-                    var seconds2 = Math.floor(difference / 1000);
-                    var minutes2 = Math.floor(seconds / 60);
-                    var hours2 = Math.floor(minutes / 60);
-                    var days2 = Math.floor(hours / 24);
-                    var time2 = days2 + " days " + hours2 + " hours " + minutes2 + " minutes " + seconds2 + " seconds";
-                    timeSpentMaking.innerHTML = time2;
-                }
-                setInterval(time2, 1000);
-            </script>
+            <div id="timeSpentMaking"></div>
         </section>
         <section id="about">
-            <div id="about_wrapper container">
-                <h3>About</h3>
-                
-                <div class="self_description col">
-                    <div class="profile_photo row" style="background: url('Images/openai.jpg') 50% 50% /100% 100% no-repeat;  "></div>
-                    <p class="row"><br><br>
-                        Hi! I am Jungha Cho.<br/> 
-                        I am a mechanical engineer with developer knowledge.<br/><br/>
-                        I am currently double majoring in both Mechanical Engineering and Applied Mathematics and Statistics in SUNY Korea Stony Brook. <br/><br/>
-                        Ultimately, I seek to learn more about Robotics and Artificial Intelligence, especially with Computer Vision. <br/><br/>
-                    </p> 
+            <h3>About</h3>
+            <div class="container row" id="about_wrapper">
+                <div class="col-md-12" id="profile_wrapper">
+                    <div class="mt-5 profile_photo" style="background: url('Images/openai.jpg') 50% 50% /100% 100% no-repeat;  "></div>
                 </div>
+                
+                <div id="text_wrapper">
+
+                    <div class="self_description col-md-12 col-lg-6" id="basic_description">
+                        <div class="row mt-5 about_text"><p>
+                            <br>
+                            Hello there! I am Jungha Cho.<br />
+                            I am a mechanical engineer with developer knowledge.<br /><br />
+                            I am currently studying in SUNY
+                            Korea Stony Brook, and I plan to go to Stony Brook Long Island on 2024 Fall semester. <br /><br />
+                            As an undergraduate student, I seek to learn more about Robotics and Artificial Intelligence, especially in Computer Vision.
+                        </p>
+                        </div>
+                    </div>
+
+                </div> 
+
             </div>
         </section>
         <section id="projects">
@@ -223,20 +161,58 @@
         </section>
         <section id="contacts">
             <h3>Contacts</h3>
-            <div class="contact-box-wrapper">
-                <fieldset>
-                    <legend>alert()/confirm()/prompt()</legend> <!--prompt는 잘 안씀-->
-                    이름 &nbsp;&nbsp;&nbsp;<input type="text" id="name" value="What's your name?"/><br>
-                    이메일 <input type="email" id="email" value="your email address?"/><br>
-                    <span>메시지</span><br>
-                    <textarea style="height: 20vh; width: 80%;"></textarea>
-                    <input type="button" id="message" value="접수" onclick="fn.send();"/>
+            
+                <fieldset class="container">
+                    <form action="https://www.naver.com" class="was-validated">
+                        <div class="form-group row" id="name_wrapper">
+                          <label for="name">Full Name:</label>
+                          <input type="text" class="form-control" id="name" placeholder="Enter full name" name="name" required>
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">I need to know how to address you!</div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="row col-md-12" for="email">Your Email:</label>
+                            <div class="row col-md-12" id="email_wrapper" style="margin:0; padding:0;">
+                                <input type="email" class="form-control col-md-8" id="email" placeholder="Enter Email" name="email" required>
+                                <div class="input-group-append col-md-4" style="margin: 0; padding: 0;">
+                                    <select name="emailtype" id="selectemail" class="custom-select">
+                                        <option selected>Select Email</option>
+                                        <option value="gmail.com">@gmail.com</option>
+                                        <option value="naver.com">@naver.com</option>
+                                        <option value="daum.net">@daum.com</option>
+                                        <option value="hanmail.net">@hanmail.com</option>
+                                    </select>
+                                </div>
+                            </div>
+                          <div class="valid-feedback">Valid.</div>
+                          <div class="invalid-feedback">I need your contact so I can reply back.</div>
+                        </div>
+
+                        <div class="form-group form-check-inline row" id="radio_wrapper">
+                            <label class="form-check-label row col-md-12">
+                            <input class="form-check-input" type="radio" name="remember" required> About Website
+                            <input class="form-check-input ml-3" type="radio" name="remember" required> Work Inquiry
+                            <input class="form-check-input ml-3" type="radio" name="remember" required> Personal Message
+                            <div class="valid-feedback">Option chosen!</div>
+                            <div class="invalid-feedback">Check one of the options to continue.</div>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group row" id="message_wrapper">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control col-md-12" id="message" style="height: 15vh; width: 100%;" required></textarea>
+                        </div>
+
+                        <div class="form-group row" id="button_wrapper">
+                            <button type="submit" id="submitbutton" class="btn btn-primary col-md-12">Submit</button>
+                        </div>
+                    </form>
                 </fieldset>
-            </div>
         </section>
         <footer>
             <div id="footer">
-                <p style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: large;">2023&#169;chojungha </p>
+                <p style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: large;">2023&#169;JunghaCho </p>
             </div>
         </footer>
     </main>

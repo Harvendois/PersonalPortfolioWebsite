@@ -45,7 +45,6 @@ nav > div > ul{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
-
 }
 nav > div > ul > li{
     display: inline-block;
@@ -86,11 +85,13 @@ section h3{
 /*hero*/
 #hero{
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     color: black;
     align-items: center;
     justify-content: center;
+    background: black;
 }
 #hero h3{
     color: white
@@ -101,6 +102,13 @@ section h3{
     text-align: center;
     color: #444;
     z-index: 2;
+}
+#timeSpentMaking{
+    width:100%;
+    font-size: 30px;
+    text-align: center;
+    color: #444;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #hero p{
     text-align: center;
@@ -113,31 +121,30 @@ section h3{
 #about{
     width: 100%;
     background-color: rgb(212, 205, 191);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-#about_wrapper{
-    width: 80%;
-}
-
-
-.self_description{
-    width: 100%;
-    height: 80%;
-    box-sizing: border-box;
-    margin: 0 auto;
-    z-index: 1;
+    height: auto;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
 }
-.self_description p{
-    margin-bottom: -5%;
+#about_wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+.self_description, #academic_description{
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    margin: 20px auto;
+    z-index: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.about_text{
     text-align: center;
     flex-basis:  420px;
-    flex-grow: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -161,9 +168,6 @@ section h3{
 .profile_photo:hover{
     transform: scale(1.2);
 }
-
-
-
 /*experience*/
 #experience{
     height: 100vh;
@@ -173,7 +177,6 @@ section h3{
     align-items: center;
 }
 .company{
-
     width:80%;
 }
 #company{
@@ -196,9 +199,7 @@ section h3{
 }
 #company_text{
     height: 100%;
-    
 }
-
 /*projects*/
 #projects{
     background: #333;
@@ -225,9 +226,7 @@ section h3{
 .projects:hover{
     transform: scale(1.15);
 }
-
 #project4, #project5,#project6 {
-    
 }
 /*social media*/
 #social_media{
@@ -288,13 +287,10 @@ section h3{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-}
-.contact-box-wrapper{
-    width: 80%;
+    width: 100%;
 }
 .contact-box-wrapper > fieldset > span{
     margin: 20px 0px 0 0;
-    
 }
 /*footer*/
 footer{
