@@ -1,5 +1,5 @@
 /*Hero Section*/ 
-var clock = document.getElementById('clock');
+/*var clock = document.getElementById('clock');
 function time() {
     var date = new Date();
     var hours = date.getHours();
@@ -20,7 +20,8 @@ function time() {
     clock.innerHTML = time;
 }
 setInterval(time, 1000);
-
+*/
+/*
 var timeSpentMaking = document.getElementById('timeSpentMaking');
 function time2() {
     var now = new Date();
@@ -30,7 +31,7 @@ function time2() {
     var hours = Math.floor((difference%(1000*60*60*24))/(1000*60*60))
     timeSpentMaking.innerHTML = days +' days '+ hours +' hours since beginning project';
 }
-setInterval(time2, 1000);
+setInterval(time2, 1000);*/
 
 
 function scrollToSection(section) {
@@ -40,41 +41,33 @@ function scrollToSection(section) {
 /*Contacts Section*/
 
 window.addEventListener('DOMContentLoaded', () => {
-    var name = document.getElementById('#name');
-    var email = document.getElementById('#email');
-    var message = document.getElementById('#message');
-    var submit = document.getElementById('#submitbutton');
-    var contactSection = document.querySelector('#contacts');
-    var emailsel = document.querySelector('#selectemail');
-    var radios = document.querySelectorAll('input[type="radio"]');
     
-    var hero_m = document.querySelector('#hero > p:nth-child(2)');
+    var hero_m = document.querySelector('#hero > p:nth-child(1)');
     var hero_main_m = document.querySelector('#hero > p:nth-child(1)');
     
+    var becomeBlack = ()=>{
+        hero_main_m.style.color = 'black';
+        hero_main_m.style.transition = 'color 2s ease-in-out';
+    }
+    becomeBlack();
+
     var typeHeroM = ()=>{
-        let text = 'I try, just to try again.';
+        let text = 'Engineer, Developer, and a Christian.';
         var textArr = text.split('');
         console.log('%O',textArr);
         for(var i =0; i<textArr.length; i++){
             (function(j) {
                 setTimeout(()=>{
                     hero_m.textContent += textArr[j];
-                }, 200 * j);
+                }, 140 * j);
             })(i);
         }
     };
     typeHeroM();
-
     
-    var becomeWhite = ()=>{
-        hero_main_m.style.color = 'white';
-        hero_main_m.style.transition = 'color 2s ease-in-out';
-    }
-    becomeWhite();
+});
 
-
-
-    /*submit.onclick=()=>{
+/*submit.onclick=()=>{
       //clicking will make the form information to be submitted to a database
         //and the form will be cleared
         name.value = '';
@@ -83,8 +76,20 @@ window.addEventListener('DOMContentLoaded', () => {
         radios.forEach((radio) => {
             radio.checked = false;
         });
-
-      
-      
     };*/
-});
+
+/*Projects Section*/
+/*
+var proj1 = document.querySelector('#project1');
+var proj1_h = document.querySelector('#project1_hover');
+console.log(proj1_h);
+console.log(proj1);
+
+proj1.onmouseover = (e)=>{
+    proj1.style.display = 'none';
+    proj1_h.style.display = 'block';
+};
+proj1_h.onmouseout = (e)=>{
+    proj1_h.style.display = 'none';
+    proj1.style.display = 'block';
+};*/

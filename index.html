@@ -23,11 +23,11 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item" onclick="scrollToSection('#hero')">Hero</li>
+                <li class="nav-item" onclick="scrollToSection('#hero')">Main</li>
                 <li class="nav-item" onclick="scrollToSection('#about')">About</li>
-                <li class="nav-item" onclick="scrollToSection('#experience')">Experience</li>                    
+                <li class="nav-item" onclick="scrollToSection('#skills')">Skills</li>
                 <li class="nav-item" onclick="scrollToSection('#projects')">Projects</li>
-                <li class="nav-item" onclick="scrollToSection('#social_media')">Social Media</li>
+                <li class="nav-item" onclick="scrollToSection('#experience')">Experience</li>                    
                 <li class="nav-item" onclick="scrollToSection('#contacts')">Contacts</li>
             </ul>
         </div>
@@ -35,21 +35,14 @@
 
     <main>
         <section id="hero">
-            <p id="welcome_message">Welcome to Jungha's Personal Website</p>
-            <!--<div class="bible_verse">
-                <h3>Dear friends, let us love one another, for love comes from God. 
-                <br/>Everyone who loves has been born of God and knows God. 
-                <br/>Whoever does not love does not know God, because God is love. 
-                <br/>1 John 4:7-8
-            </h3>
-            </div>-->
-            <p id="message" style="color:white"></p>
-            <hr/>
-            <div id="clock" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;"></div>
-            <div id="timeSpentMaking"></div>
+            <!--<a href="https://kr.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_25860683.htm#query=%ED%94%8C%EB%9E%AB%ED%8F%BC&position=1&from_view=keyword&track=sph">작가 pikisuperstar</a> 출처 Freepik-->
+            <p id="message" style="color:black"></p>
+            <div id="img_wrapper">
+                <img src="Images/hero.png">
+            </div>
         </section>
         <section id="about">
-            <h3>About</h3>
+            <!--<h3>About</h3>-->
             <div class="container row" id="about_wrapper">
                 <div class="col-md-12" id="profile_wrapper">
                     <div class="mt-5 profile_photo" style="background: url('Images/openai.jpg') 50% 50% /100% 100% no-repeat;  "></div>
@@ -58,109 +51,66 @@
                 <div id="text_wrapper">
 
                     <div class="self_description col-md-12 col-lg-6" id="basic_description">
-                        <div class="row mt-5 about_text"><p>
+                        <div class="row mt-3 about_text"><p>
+                            Hello there!  I am Jungha Cho,<br />
+                            a mechanical engineer with developer knowledge.<br>
                             <br>
-                            Hello there! I am Jungha Cho.<br />
-                            I am a mechanical engineer with developer knowledge.<br /><br />
-                            I am currently studying in SUNY
-                            Korea Stony Brook, and I plan to go to Stony Brook Long Island on 2024 Fall semester. <br /><br />
-                            As an undergraduate student, I seek to learn more about Robotics and Artificial Intelligence, especially in Computer Vision.
+                            &#128204; Languages: Korean, English, Indonesian <br>
+                            &#127891; Education: Stony Brook University, B.E. 
                         </p>
                         </div>
                     </div>
 
                 </div> 
-
+            </div>
+        </section>
+        <section id="skills">
+            <div id="skills_wrapper">
+                <div id="engineer_skills"></div>
+                <div id="developer_skills"></div>
+                <div id="general_skills"></div>
             </div>
         </section>
         <section id="projects">
-            <h3>Projects</h3>
-            <div id="projects_wrapper_line_1">
-                <div class="projects" id="project1"><h4>project1</h4></div>
-                <div class="projects" id="project2"><h4>project2</h4></div>
-                <div class="projects" id="project3"><h4>project3</h4></div>
-                <!--<div class="projects" id="project4"><h4>project4</h4></div>
-                <div class="projects" id="project5"><h4>project5</h4></div>
-                <div class="projects" id="project6"><h4>project6</h4></div>-->
+            <h3 style="margin-top: 5%;">My Recent Projects</h3>
+            <div id="projects_wrapper">
+                <div class="project_wrapper">
+                    <div class="projects" id="project1">
+                    </div>
+                    <div class="project_hover" id="project1_hover">
+                        <span class="project_text">The Process of creating my personal portfolio website</span> 
+                        <button type="button" class="btn btn-outline-info" id="project1_button" onclick="window.location.href='https:\/www.notion.so/Jungha-s-Portfolio-Website-Development-0-100-3d8dbff5c6484d3a8083245701285bd1'">Visit Website</button>
+                    </div>
+                </div>
+
+                <div class="project_wrapper">
+                    <div class="projects" id="project2">
+                    </div>
+                    <div class="project_hover" id="project2_hover">
+                        <span class="project_text">Group Project done with KOSMO teammates</span> 
+                        <button type="button" class="btn btn-outline-info" id="project2_button" href="#">Visit Website</button>
+                    </div>
+                </div>
+
+                <div class="project_wrapper">
+                    <div class="projects" id="project3">
+                    </div>
+                    <div class="project_hover" id="project3_hover">
+                        <span class="project_text">My Individual Neural Network Project: Jarvis</span> 
+                        <button type="button" class="btn btn-outline-info" id="project3_button" href="#">Visit Website</button>
+                    </div>
+                </div>
+
             </div>
         </section>
         <section id="experience">
-            <h3 class="row">Experience</h3>
-            <div class="column container bg-dark">
+            <h3 class="row" style="margin-top: 5%;">Experience</h3>
+            
 
-                <div class="row row-cols-1 mt-4 mb-4" id="experience1">
-                    <div class="col-sm-2 bg-danger" style="border-right: 5px solid white;">Company 1 Logo</div>
-                    <div class="col-sm-10 bg-success">
-                        <div class="row bg-warning">Company 1 Title</div>
-                        <div class="row" style="border-bottom: 2px solid white;">Company 1 description</div>
-                        <div class="row bg-info">
-                            <ul>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row mb-4" id="experience2">
-                    <div class="col-sm-2 bg-danger" style="border-right: 5px solid white;">Company 2 Logo</div>
-                    <div class="col-sm-10 bg-success">
-                        <div class="row bg-warning">Company 2 Title</div>
-                        <div class="row" style="border-bottom: 2px solid white;">Company 2 description</div>
-                        <div class="row bg-info">
-                            <ul>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mb-4" id="experience3">
-                    <div class="col-sm-2 bg-danger" style="border-right: 5px solid white;">Company 3 Logo</div>
-                    <div class="col-sm-10 bg-success">
-                        <div class="row bg-warning">Company 3 Title</div>
-                        <div class="row" style="border-bottom: 2px solid white;">Company 3 description</div>
-                        <div class="row bg-info">
-                            <ul>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                                <li><p>I was an intern for...</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section id="social_media">
-            <h3>Social Media</h3>
-            <div class="social-media-wrapper">
-                <div class="ind_wrapper" id="linkedin_wrapper">
-                    <a href="https://kr.linkedin.com/in/jungha-j-cho-895211126"><div id="linkedin"></div></a>
-                    <p id="linkedin_text">LinkedIn</p>
-                </div>
-                <div class="ind_wrapper" id="instagram_wrapper">
-                    <a href="https://www.instagram.com/chojungha98/"><div id="instagram"></div></a>
-                    <p id="instagram_text">Instagram</p>
-                </div>
-                <div class="ind_wrapper" id="notion_wrapper">
-                    <a href="https://www.notion.so/Jungha-s-Home-ea8f7f7e75cd49ffa21bca0988bc71f8"><div id="notion"></div></a>
-                    <p id="notion_text">Notion</p>
-                </div>
-                <div class="ind_wrapper" id="github_wrapper">
-                    <a href="https://github.com/Harvendois?tab=repositories"><div id="github"></div></a>
-                    <p id="github_text">GitHub</p>
-                </div>
-            </div>
         </section>
         <section id="contacts">
-            <h3>Contacts</h3>
+            <h3 style="margin-top: 5%; color: blueviolet;" >Contacts</h3>
             
                 <fieldset class="container">
                     <form action="https://www.naver.com" class="was-validated">
@@ -200,19 +150,28 @@
                         </div>
                         
                         <div class="form-group row" id="message_wrapper">
-                            <label for="message">Message:</label>
-                            <textarea class="form-control col-md-12" id="message" style="height: 15vh; width: 100%;" required></textarea>
+                            <label for="contact_message">Message:</label>
+                            <textarea class="form-control col-md-12" id="contact_message" style="height: 15vh; width: 100%;" required></textarea>
                         </div>
 
                         <div class="form-group row" id="button_wrapper">
-                            <button type="submit" id="submitbutton" class="btn btn-primary col-md-12">Submit</button>
+                            <button type="submit" id="submitbutton" class="btn btn-danger col-md-12">Submit</button>
                         </div>
                     </form>
                 </fieldset>
         </section>
         <footer>
             <div id="footer">
-                <p style="font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: large;">2023&#169;JunghaCho </p>
+                <div>some logo here</div>
+                <p style="font-size: 30px;">I try, just to try again.</p>
+                <div id="socialmedia_wrapper">
+                    <a href="https://kr.linkedin.com/in/jungha-j-cho-895211126"><div id="linkedin"></div></a>
+                    <a href="https://www.instagram.com/chojungha98/"><div id="instagram"></div></a>
+                    <a href="https://www.notion.so/Jungha-s-Home-ea8f7f7e75cd49ffa21bca0988bc71f8"><div id="notion"></div></a>
+                    <a href="https://github.com/Harvendois?tab=repositories"><div id="github"></div></a>
+                </div>
+                <p>Hardcoded by myself &#169; JunghaCho in 2023</p>
+                <p>Design Motivated from Matt Farley</p>
             </div>
         </footer>
     </main>
