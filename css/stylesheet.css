@@ -165,6 +165,7 @@ section h3{
 }
 
 /*skills*/
+/*skills overall structures*/
 #skills{
     width: 100%;
     height: 50vh;
@@ -172,14 +173,16 @@ section h3{
     border-bottom: 2px solid #E6ECF8;
     display: flex;
     justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #skills_wrapper{
     width: 90%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 #skills_wrapper > div{
-    height: 50px;
+    height: auto;
     border-bottom: 2px solid #E6ECF8;
     border-right: 2px solid #E6ECF8;
 }
@@ -193,7 +196,29 @@ section h3{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
+/*skills content*/
+.skill_title{
+    font-size: larger;
+    font-weight: bold;
+}
+.skill_wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+#skills_wrapper p{
+    text-align: center;
+}
+#dev_skills img{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+#text_skills{
+    text-align: center;
+}
 
 /*projects*/
 #projects{
@@ -212,6 +237,18 @@ section h3{
     justify-content: space-evenly;
 }
 /*projects common traits*/
+.projects{
+    background-color: white;
+    color: white;
+    border: 1px solid #E6ECF8;
+    border-radius: 10px;
+    height: 270px;
+    margin: 20px;
+    flex: 0 0 400px;
+    z-index: 1;
+    transition: .5s;
+    position: relative;
+}
 .project_hover{
     /*for itself*/
     transition: .5s ease-in-out;
@@ -239,19 +276,7 @@ section h3{
     width: 70%;
     margin-bottom: 5%;
 }
-.projects{
-    background-color: white;
-    color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 270px;
-    margin: 20px;
-    flex: 0 0 400px;
-    z-index: 1;
-    transition: .5s;
-    position: relative;
- 
-}
+
 /*specific traits*/
 #project1{
     background: url('../Images/hero.png');
