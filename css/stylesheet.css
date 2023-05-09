@@ -145,7 +145,7 @@ section h3{
     justify-content: center;
     position: relative;
     z-index: 1;
-    padding-bottom: 20vh;
+    padding-bottom: 10vh;
     padding-top: 5vh;
     margin-top: -10vh;
 }
@@ -215,7 +215,7 @@ section h3{
 }
 @media screen and ( 768px < width < 1080px){
     #skills{
-        height: 40vh;
+        height: 30vh;
     }
 }
 @media screen and (max-width: 768px){
@@ -236,7 +236,7 @@ section h3{
 }
 @media screen and (min-width: 1080px){
     #skills_wrapper{
-        margin-top: -33vh;
+        margin-top: -23vh;
     }
     #skills{
         height: 20vh;
