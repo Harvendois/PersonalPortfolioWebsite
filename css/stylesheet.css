@@ -10,7 +10,7 @@ nav{
     width: 100%;
     font-size-adjust: inherit;
     box-sizing: border-box;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.9);
     height: fit-content;
     margin: auto;
     position: fixed;
@@ -72,6 +72,14 @@ nav > button > span{
     width: 30px;
     color: white;
 }
+@media screen and (max-width: 768px){
+    nav{
+        background: rgba(255,255,255,0.9);
+    }
+    nav > div> ul > li{
+        border-right: none;
+    }
+}
 /*header css finished*/
 
 /*main body css */
@@ -94,8 +102,11 @@ section h3{
     align-items: center;
     background: white;
 }
+#iam{
+    padding-top : 25vh;
+}
 #message{
-    margin-top: 150px;
+    padding-top: 20px;
 }
 #hero p{
     font-size: 30px;
@@ -115,6 +126,14 @@ section h3{
     overflow-clip-margin: content-box;
     overflow: clip;
 }
+@media screen and (min-width: 1080px){
+    #img_wrapper{
+        width: 50%;
+    }
+    #iam{
+        padding-top: 18vh;
+    }
+}
 /*about*/
 #about{
     width: 100%;
@@ -124,6 +143,11 @@ section h3{
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20vh;
+    padding-top: 5vh;
+    margin-top: -10vh;
 }
 #about_wrapper{
     width: 100%;
@@ -141,6 +165,8 @@ section h3{
     flex-flow: column nowrap;
 }
 .about_text{
+    padding-top: 2vh;
+    padding-bottom: 3vh;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -163,23 +189,58 @@ section h3{
 .profile_photo:hover{
     transform: scale(1.2);
 }
-
+@media screen and (min-width: 1080px){
+    
+}
 /*skills*/
 /*skills overall structures*/
 #skills{
     width: 100%;
-    height: 50vh;
+    height: 45vh;
     background-color: white;
-    border-bottom: 2px solid #E6ECF8;
     display: flex;
     justify-content: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #skills_wrapper{
     width: 90%;
-    height: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    position: absolute;
+    z-index: 2;
+    margin-top: -20vh;
+}
+@media screen and ( 768px < width < 1080px){
+    #skills{
+        height: 40vh;
+    }
+}
+@media screen and (max-width: 768px){
+    #skills{
+        height: 110vh;
+    }
+    #dev_skills,#gen_skills{
+        border-left: 2px solid #E6ECF8;
+        border-radius: 10px;
+    }
+    #eng_skills{
+        border-right: 2px solid #E6ECF8;
+        border-radius: 10px;
+    }
+    #skills_wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (min-width: 1080px){
+    #skills_wrapper{
+        margin-top: -33vh;
+    }
+    #skills{
+        height: 20vh;
+    }
 }
 #skills_wrapper > div{
     height: auto;
@@ -204,9 +265,21 @@ section h3{
 .skill_wrapper{
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
     height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.skill_list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.text_wrapper{
+    width: 90%;
 }
 #skills_wrapper p{
     text-align: center;
@@ -216,24 +289,27 @@ section h3{
     height: 30px;
     margin: 0 auto;
 }
-#text_skills{
-    text-align: center;
-}
 
 /*projects*/
 #projects{
     background: white;
     color: blueviolet; 
+    padding-top: 10px;
+    width: 100%;
+    height: auto;
 }
 #projects_wrapper{
     width: 100%-40px;
     height: auto;
     padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 .project_wrapper{
     display: flex;
     flex-flow: row wrap;
-    width:100%;
+    width: 400px;
     justify-content: space-evenly;
 }
 /*projects common traits*/
@@ -293,21 +369,96 @@ section h3{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+/*more projects button*/
+#projects_button_wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+#more_projects_button{
+    background: #141c3a;
+    color: white;
+    border: black 2px solid;
+    transition: .5s;
+}
+#more_projects_button:hover{
+    background: white;
+    color: black;
+    border: black 2px solid;
+    transition: 0.5s;
+}
 
 /*experience*/
 #experience{
+    width: 100%;
     height: auto;
     background-color: blueviolet;
+    color: white;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    color: white;
+    padding-top: 30px;
 }
-.company{
-    width:80%;
-    color: black;
-    margin-bottom: 5%;
+#experience_wrapper{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+#exp_history_left{
+    width: 100px;
+    height: 100%;
+    padding-right: 20px;
+}
+#exp_history_right{
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid white;
+}
+.bullet_and_content{
+    height: 150px;
+    position: relative;
+}
+.bullet_and_content p{
+    padding-left : 30px;
+    margin-bottom: 0;
+}
+.year{
+    width: 20px;
+    height: 150px;
+    font-size: large;
+    position: relative;
+}
+.year_number{
+    position: absolute;
+    top: -10px;
+}
+.bullets{
+    width: 10px;
+    background-color: white;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -5.818px;
+}
+.position{
+    position: absolute;
+    top: -10px;
+    font-size: larger;
+}
+.info{
+    list-style: none;
+}
+@media screen and (min-width: 1080px){
+    #experience_wrapper{
+        width: 60%;
+    }
+    .year{
+        font-size: larger;
+    }
 }
 
 /*contacts*/
@@ -333,6 +484,11 @@ section h3{
     font-weight: bold;
     border: white 2px solid;
     transition: 0.5s;
+}
+@media screen and (min-width: 1080px){
+    #contact_wrapper{
+        width: 50%;
+    }
 }
 /*footer*/
 footer{

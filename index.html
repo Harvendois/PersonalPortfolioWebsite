@@ -25,7 +25,6 @@
             <ul class="navbar-nav">
                 <li class="nav-item" onclick="scrollToSection('#hero')">Main</li>
                 <li class="nav-item" onclick="scrollToSection('#about')">About</li>
-                <li class="nav-item" onclick="scrollToSection('#skills')">Skills</li>
                 <li class="nav-item" onclick="scrollToSection('#projects')">Projects</li>
                 <li class="nav-item" onclick="scrollToSection('#experience')">Experience</li>                    
                 <li class="nav-item" onclick="scrollToSection('#contacts')">Contacts</li>
@@ -36,6 +35,7 @@
     <main>
         <section id="hero">
             <!--<a href="https://kr.freepik.com/free-vector/hand-drawn-flat-design-api-illustration_25860683.htm#query=%ED%94%8C%EB%9E%AB%ED%8F%BC&position=1&from_view=keyword&track=sph">작가 pikisuperstar</a> 출처 Freepik-->
+            <div id="iam"><p>I am an:</p></div>
             <p id="message" style="color:black"></p>
             <div id="img_wrapper">
                 <img src="Images/hero.png">
@@ -70,6 +70,13 @@
                   <div class="text_wrapper">
                     <p class="skill_emoji">&#128261;</p>
                     <p class="skill_title">Engineering Skills</p>
+                    <p class="skill_desc">I am currently learning and researching about ML</p>
+                    <p class="skill_title">Engineering Tools I Use</p>
+                    <ul class="skill_list">
+                        <li>NX10</li>
+                        <li>MATLAB</li>
+                        <li>R (Big Data Management)</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="skill_wrapper" id="dev_skills">
@@ -77,18 +84,39 @@
                     <p class="skill_emoji">&#128187;</p>
                     <p class="skill_title">Developer Skills</p>
                     <p class="skill_desc">I am delving into Machine Learning and Neural Networks.</p>
-                  </div>
+                    <p class="skill_title">Languages I Use</p>
+                    <ul class="skill_list">
+                        <li>Java & Spring</li>
+                        <li>JavaScript (ES6, React JS)</li>
+                        <li>Python (Pytorch)</li>
+                        <li>OracleSQL XE</li>
+                        <li>PL/SQL</li>
+                        <li>HTML5&CSS3</li>
+                    </ul>
+                </div>
                 </div>
                 <div class="skill_wrapper" id="gen_skills">
                   <div class="text_wrapper">
                     <p class="skill_emoji">&#128204;</p>
                     <p class="skill_title">General Skills</p>
+                    <p class="skill_desc">Past Experiences become Current Life Skills</p>
+                    <p class="skill_title">Languages I Use</p>
+                    <ul class="skill_list">
+                        <li>Academic Writing</li>
+                        <li>ChatGPT Prompt Engineering</li>
+                        <li>Event Management</li>
+                        <li>Interpreting/Translating</li>
+                        <li>Leadership/Teamwork</li>
+                        <li>Public Speaking</li>
+                        <li>Teaching/Tutoring/Mentoring</li>
+                    </ul>
                   </div>
                 </div>
             </div>
         </section>
         <section id="projects">
             <h3 style="margin-top: 5%;">My Recent Projects</h3>
+
             <div id="projects_wrapper">
                 <div class="project_wrapper">
                     <div class="projects" id="project1">
@@ -116,19 +144,94 @@
                         <button type="button" class="btn btn-outline-info" id="project3_button" href="#">Visit Website</button>
                     </div>
                 </div>
+            </div>
+            <div id="projects_button_wrapper">
+                <button type="button" class="btn btn-outline-info" id="more_projects_button" href="#">More Projects</button>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h3 class="row" style="margin-top: 5%;">Work Experience</h3>
+            <div id="experience_wrapper">
+
+                <div id="exp_history_left">
+                    <div class="year">
+                        <p class="year_number">2023.02 2023.03</p>
+                    </div>
+                    <div class="year">
+                        <p class="year_number">2021.08 2023.02</p>
+                    </div>
+                    <div class="year">
+                        <p class="year_number">2021.01 2021.06</p>
+                    </div>
+                    <div class="year">
+                        <p class="year_number">2019.12 2020.01</p>
+                    </div>
+                    <div class="year">
+                        <p class="year_number">2019.08 2021.06</p>
+                    </div>
+                </div>
+
+                <div id="exp_history_right">
+                    <div class="bullet_and_content">
+                        <div class="bullets"></div>
+                        <div class="content">
+                            <p class="position">&#128188; Education Initiatives Intern</p>
+                            <ul class="info">
+                                <li class="company"><br> &#128205;&nbsp; Gen.G Esports</li>
+                                <li class="desc"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bullet_and_content">
+                        <div class="bullets"></div>
+                        <div class="content">
+                            <p class="position">&#128188; Sergeant</p>
+                            <ul class="info">
+                                <li class="company"><br> &#128205;&nbsp; ROKA 17th Infantry Division</li>
+                                <li class="desc"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bullet_and_content">
+                        <div class="bullets"></div>
+                        <div class="content">
+                            <p class="position">&#128188; English Teacher</p>
+                            <ul class="info">
+                                <li class="company"><br> &#128205;&nbsp; Solomon Academy</li>
+                                <li class="desc"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bullet_and_content">
+                        <div class="bullets"></div>
+                        <div class="content">
+                            <p class="position">&#128188; Prep Camp Lecturer</p>
+                            <ul class="info">
+                                <li class="company"><br> &#128205;&nbsp; SUNY Korea Admissions Team</li>
+                                <li class="desc"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bullet_and_content">
+                        <div class="bullets"></div>
+                        <div class="content">
+                            <p class="position">&#128188; Residential Assistant </p>
+                            <ul class="info">
+                                <li class="company"><br> &#128205;&nbsp; SUNY Korea RHD Team</li>
+                                <li class="desc"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
-        <section id="experience">
-            <h3 class="row" style="margin-top: 5%;">Experience</h3>
-            
 
-
-        </section>
         <section id="contacts">
-            <h3 style="margin-top: 5%; color: blueviolet;" >Contacts</h3>
+            <h3 style="margin-top: 5%; color: blueviolet;" >Contact Me!</h3>
             
-                <fieldset class="container">
+                <fieldset class="container" id="contact_wrapper">
                     <form action="https://www.naver.com" class="was-validated">
                         <div class="form-group row" id="name_wrapper">
                           <label for="name">Full Name:</label>
@@ -151,7 +254,7 @@
                                     </select>
                                 </div>
                             </div>
-                          <div class="valid-feedback">Valid.</div>
+                          <div class="valid-feedback">Nice to know you!</div>
                           <div class="invalid-feedback">I need your contact so I can reply back.</div>
                         </div>
 

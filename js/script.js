@@ -42,8 +42,8 @@ function scrollToSection(section) {
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    var hero_m = document.querySelector('#hero > p:nth-child(1)');
-    var hero_main_m = document.querySelector('#hero > p:nth-child(1)');
+    var hero_m = document.querySelector('#hero > p:nth-child(2)');
+    var hero_main_m = document.querySelector('#hero > p:nth-child(2)');
     
     var becomeBlack = ()=>{
         hero_main_m.style.color = 'black';
