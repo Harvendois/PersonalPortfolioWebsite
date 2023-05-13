@@ -38,8 +38,6 @@ function scrollToSection(section) {
     document.querySelector(section).scrollIntoView({ behavior: 'smooth' });
 }
 
-/*Contacts Section*/
-
 window.addEventListener('DOMContentLoaded', () => {
     
     var hero_m = document.querySelector('#hero > p:nth-child(2)');
@@ -67,6 +65,33 @@ window.addEventListener('DOMContentLoaded', () => {
     
 });
 
+/*Contacts Section*/
+window.addEventListener('DOMContentLoaded', () => {
+    var selEmail = document.querySelector('#selectemail');
+    var email = document.getElementById('email');
+    var toggle = false;
+    if(email.value.split('@')[1] === undefined){ 
+        toggle = true;
+    };
+    console.log(toggle);
+
+    selEmail.onchange = () => {
+        if(toggle){
+        email.value = email.value + '@' + selEmail.value;
+        console.log(email.value.split('@')[0]);
+        console.log(email.value.split('@')[1]);
+        toggle = false;
+        }
+        else{
+            if(selEmail.value ==='Select Email'){
+                return;
+            }
+            email.value = email.value.split('@')[0] + '@' + selEmail.value;
+            console.log(email.value.split('@')[0]);
+            console.log(email.value.split('@')[1]);
+        }
+    };
+});
 /*submit.onclick=()=>{
       //clicking will make the form information to be submitted to a database
         //and the form will be cleared

@@ -8,8 +8,6 @@ main{
 }
 nav{
     width: 100%;
-    font-size-adjust: inherit;
-    box-sizing: border-box;
     background: rgba(255,255,255,0.9);
     height: fit-content;
     margin: auto;
@@ -51,7 +49,7 @@ nav > div > ul{
 nav > div > ul > li{
     display: inline-block;
     flex: 1 1 auto;
-    border-right: lightgray 1px solid;
+    border-right: lightgray 2px solid;
     text-decoration: none;
     padding: 10px 5px;
     color: blueviolet;
@@ -69,8 +67,12 @@ nav > div > ul > li:last-child{
 nav > button > span{
     border: lightgray 2px solid;
     border-radius: 50%;
-    width: 30px;
-    color: white;
+    color: black; 
+}
+.navbar_toggler{
+    background: black;
+    border: 1px solid black;
+    z-index: 4;
 }
 @media screen and (max-width: 768px){
     nav{
@@ -103,10 +105,11 @@ section h3{
     background: white;
 }
 #iam{
-    padding-top : 25vh;
+    padding-top : 20vh;
 }
 #message{
     padding-top: 20px;
+    padding-bottom: 5vh;
 }
 #hero p{
     font-size: 30px;
@@ -126,12 +129,21 @@ section h3{
     overflow-clip-margin: content-box;
     overflow: clip;
 }
-@media screen and (min-width: 1080px){
+@media screen and (768< width< 1080px){
     #img_wrapper{
         width: 50%;
     }
     #iam{
         padding-top: 18vh;
+    }
+}
+@media screen and (max-width: 768px){
+    #img_wrapper{
+        width: 100%;
+        padding-bottom: 3.5vh;
+    }
+    #iam{
+        padding-top: 10vh;
     }
 }
 /*about*/
@@ -189,8 +201,10 @@ section h3{
 .profile_photo:hover{
     transform: scale(1.2);
 }
-@media screen and (min-width: 1080px){
-    
+@media screen and (max-width: 768px){
+    .about_text{
+        padding-bottom: 10vh;
+    }
 }
 /*skills*/
 /*skills overall structures*/
@@ -215,7 +229,10 @@ section h3{
 }
 @media screen and ( 768px < width < 1080px){
     #skills{
-        height: 30vh;
+        height: 35vh;
+    }
+    #skills_wrapper{
+        margin-top: -15vh;
     }
 }
 @media screen and (max-width: 768px){
@@ -305,6 +322,7 @@ section h3{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    padding-top: 40px;
 }
 .project_wrapper{
     display: flex;
@@ -374,13 +392,14 @@ section h3{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding-bottom: 30px;
+    padding: 40px 0px;
 }
 #more_projects_button{
     background: #141c3a;
     color: white;
     border: black 2px solid;
     transition: .5s;
+    
 }
 #more_projects_button:hover{
     background: white;
